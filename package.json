@@ -1,6 +1,6 @@
 {
   "name": "github-readme-to-html",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generate a simple HTML page based on a single markdown file",
   "main": "index.js",
   "files": [
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jrnewton/markdown-to-html-github-style.git"
+    "url": "git+https://github.com/jrnewton/github-readme-to-html.git"
   },
   "keywords": [
     "github",
@@ -31,9 +31,9 @@
   "author": "Jon Newton <newt@hey.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jrnewton/markdown-to-html-github-style/issues"
+    "url": "https://github.com/jrnewton/github-readme-to-html/issues"
   },
-  "homepage": "https://github.com/jrnewton/markdown-to-html-github-style#readme",
+  "homepage": "https://github.com/jrnewton/github-readme-to-html#readme",
   "prettier": {
     "singleQuote": true,
     "trailingComma": "none",
