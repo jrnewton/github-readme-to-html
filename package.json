@@ -1,5 +1,5 @@
 {
-  "name": "netlify-markdown-site",
+  "name": "github-readme-to-html",
   "version": "1.0.0",
   "description": "Generate a simple HTML page based on a single markdown file",
   "main": "convert.js",
