@@ -41,9 +41,9 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
     //console.log(html);
 
     let filePath = process.cwd() + '/dist/README.html';
-    fs.writeFile(filePath, html, { flag: 'wx' }, function (err) {
+    fs.writeFile(filePath, html, { flag: 'w' }, function (err) {
       if (err) {
-        console.log("File '" + filePath + "' already exists. Aborted!");
+        console.log('Failed, could not open', filePath, err);
       } else {
         console.log('Done, saved to ' + filePath);
 
