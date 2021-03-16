@@ -16,12 +16,12 @@ body {
     padding: 5px;
   }
 
-  body > #content {
+  main {
     padding: 0px 20px 20px 20px !important;
   }
 }
 
-body > #content {
+main {
   margin: 0px;
   max-width: 900px;
   border: 1px solid #e1e4e8;

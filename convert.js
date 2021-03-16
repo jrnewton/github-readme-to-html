@@ -26,11 +26,11 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
       </head>
       <body>
-        <div id='content'>
+        <main>
     `;
 
     let postContent = `
-        </div>
+        </main>
         <style type='text/css'>${styleData}</style>
       </body>
     </html>`;
