@@ -1,8 +1,9 @@
 const showdown = require('showdown');
 const fs = require('fs-extra');
-const pageTitle = process.argv[2] || 'README';
+const readmeFile = process.argv[2] || 'README.md';
+const pageTitle = process.argv[3] || 'README';
 
-fs.readFile(process.cwd() + '/README.md', function (err, data) {
+fs.readFile(process.cwd() + '/' + readmeFile, function (err, data) {
   if (err) {
     throw err;
   }

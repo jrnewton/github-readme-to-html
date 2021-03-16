@@ -11,7 +11,7 @@
     "prettier": "^2.2.1"
   },
   "scripts": {
-    "start": "node convert.js",
+    "start": "node convert.js README.md 'My Simple Readme'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
