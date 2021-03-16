@@ -1,5 +1,28 @@
 {
+  "name": "markdown-to-html-github-style",
+  "version": "1.0.0",
+  "description": "Generate a simple HTML page based on a single markdown file",
+  "main": "convert.js",
   "dependencies": {
     "showdown": "^1.9.1"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrnewton/markdown-to-html-github-style.git"
+  },
+  "keywords": [
+    "github",
+    "markdown"
+  ],
+  "author": "Jon Newton <newt@hey.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jrnewton/markdown-to-html-github-style/issues"
+  },
+  "homepage": "https://github.com/jrnewton/markdown-to-html-github-style#readme"
 }
