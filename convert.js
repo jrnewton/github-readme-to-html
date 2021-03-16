@@ -1,54 +1,53 @@
 const showdown = require('showdown');
 const fs = require('fs-extra');
-const filename = 'README.md';
-let pageTitle = process.argv[2] || 'README';
+const pageTitle = process.argv[2] || 'README';
 
-fs.readFile(__dirname + '/style.css', function (err, styleData) {
-  fs.readFile(process.cwd() + '/' + filename, function (err, data) {
-    if (err) {
-      throw err;
-    }
-    let text = data.toString();
+fs.readFile(process.cwd() + '/README.md', function (err, data) {
+  if (err) {
+    throw err;
+  }
+  const text = data.toString();
 
-    converter = new showdown.Converter({
-      ghCompatibleHeaderId: true,
-      simpleLineBreaks: true,
-      ghMentions: true,
-      tables: true
-    });
+  converter = new showdown.Converter({
+    ghCompatibleHeaderId: true,
+    simpleLineBreaks: true,
+    ghMentions: true,
+    tables: true,
+    emoji: true
+  });
 
-    let preContent = `
+  converter.setFlavor('github');
+
+  const preContent = `
     <!DOCTYPE html>
     <html>
       <head>
         <title>${pageTitle}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/style.css">
       </head>
       <body>
         <main>
     `;
 
-    let postContent = `
+  const postContent = `
         </main>
-        <style type='text/css'>${styleData}</style>
       </body>
     </html>`;
 
-    html = preContent + converter.makeHtml(text) + postContent;
+  html = preContent + converter.makeHtml(text) + postContent;
 
-    converter.setFlavor('github');
-    //console.log(html);
+  fs.ensureDirSync(process.cwd() + '/dist');
 
-    let filePath = process.cwd() + '/dist/README.html';
-    fs.writeFile(filePath, html, { flag: 'w' }, function (err) {
-      if (err) {
-        console.log('Failed, could not open', filePath, err);
-      } else {
-        console.log('Done, saved to ' + filePath);
+  const filePath = process.cwd() + '/dist/README.html';
+  fs.writeFile(filePath, html, { flag: 'w' }, function (err) {
+    if (err) {
+      console.log('Failed, could not open', filePath, err);
+    } else {
+      console.log('Done, saved to ' + filePath);
 
-        fs.copySync(process.cwd() + '/assets', process.cwd() + '/dist/assets');
-      }
-    });
+      fs.copySync(process.cwd() + '/assets', process.cwd() + '/dist/assets');
+    }
   });
 });
