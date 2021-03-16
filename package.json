@@ -7,9 +7,11 @@
     "fs-extra": "^9.1.0",
     "showdown": "^1.9.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "prettier": "^2.2.1"
+  },
   "scripts": {
-    "start": "",
+    "start": "node convert.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,5 +27,10 @@
   "bugs": {
     "url": "https://github.com/jrnewton/markdown-to-html-github-style/issues"
   },
-  "homepage": "https://github.com/jrnewton/markdown-to-html-github-style#readme"
+  "homepage": "https://github.com/jrnewton/markdown-to-html-github-style#readme",
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "none",
+    "quoteProps": "consistent"
+  }
 }
