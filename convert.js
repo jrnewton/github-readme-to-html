@@ -17,14 +17,11 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
       tables: true
     });
 
-    let preContent =
-      `
+    let preContent = `
     <!DOCTYPE html>
     <html>
       <head>
-        <title>` +
-      pageTitle +
-      `</title>
+        <title>${pageTitle}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
       </head>
@@ -32,12 +29,9 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
         <div id='content'>
     `;
 
-    let postContent =
-      `
+    let postContent = `
         </div>
-        <style type='text/css'>` +
-      styleData +
-      `</style>
+        <style type='text/css'>${styleData}</style>
       </body>
     </html>`;
 
