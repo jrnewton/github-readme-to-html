@@ -2,6 +2,7 @@ const showdown = require('showdown');
 const fs = require('fs-extra');
 const readmeFile = process.argv[2] || 'README.md';
 const pageTitle = process.argv[3] || 'Read Me';
+const outputFile = process.argv[4] || 'index.html';
 
 fs.readFile(process.cwd() + '/' + readmeFile, function (err, data) {
   if (err) {
@@ -41,7 +42,7 @@ fs.readFile(process.cwd() + '/' + readmeFile, function (err, data) {
 
   fs.ensureDirSync(process.cwd() + '/dist');
 
-  const filePath = process.cwd() + '/dist/README.html';
+  const filePath = process.cwd() + '/dist/' + outputFile;
   fs.writeFile(filePath, html, { flag: 'w' }, function (err) {
     if (err) {
       console.log('Failed, could not open', filePath, err);

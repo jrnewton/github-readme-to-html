@@ -11,7 +11,7 @@
     "prettier": "^2.2.1"
   },
   "scripts": {
-    "build": "node convert.js ORIGINAL.md 'Example Read Me'",
+    "build": "node convert.js ORIGINAL.md 'Example Read Me' index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
