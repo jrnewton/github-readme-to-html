@@ -4,8 +4,10 @@
   "description": "Generate a simple HTML page based on a single markdown file",
   "main": "index.js",
   "files": [
-    "index.js"
+    "index.js",
+    "style.css"
   ],
+  "bin": "./index.js",
   "dependencies": {
     "fs-extra": "^9.1.0",
     "showdown": "^1.9.1"
