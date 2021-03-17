@@ -30,6 +30,8 @@ All output goes to ./dist
     - .
 ```
 
+### Example
+
 Input: [ORIGINAL.md](ORIGINAL.md)
 
 Output: https://github-readme-to-html.netlify.app/
