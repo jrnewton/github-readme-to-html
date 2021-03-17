@@ -3,16 +3,14 @@
 const showdown = require('showdown');
 const fs = require('fs-extra');
 
-const readmeFileName = process.argv[2] || 'README.md';
-const pageTitle = process.argv[3] || 'Read Me';
-const outputFileName = process.argv[4] || 'index.html';
+const distDir = './dist';
 
 const cssFile = __dirname + '/style.css'; //inside our module
-const distDir = process.cwd() + '/dist';
-const readmeFile = process.cwd() + '/' + readmeFileName;
-const outputFile = distDir + '/' + outputFileName;
-const assetsDirSource = process.cwd() + '/assets';
-const assetsDirTarget = distDir + '/dist/assets';
+const readmeFile = process.argv[2] || './README.md';
+const pageTitle = process.argv[3] || 'Read Me';
+const outputFile = distDir + '/index.html';
+const assetsDirSource = process.argv[4] || './assets/';
+const assetsDirTarget = distDir + '/assets';
 
 const converter = new showdown.Converter({
   ghCompatibleHeaderId: true,
