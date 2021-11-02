@@ -9,6 +9,7 @@
   ],
   "bin": "./index.js",
   "dependencies": {
+    "commander": "^8.3.0",
     "fs-extra": "^9.1.0",
     "showdown": "^1.9.1"
   },
@@ -16,7 +17,7 @@
     "prettier": "^2.2.1"
   },
   "scripts": {
-    "start": "node index.js ORIGINAL.md 'Example Read Me' index.html",
+    "start": "node index.js -i ORIGINAL.md -o index.html -t \"Read Me\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

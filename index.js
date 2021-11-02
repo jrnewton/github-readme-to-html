@@ -2,14 +2,28 @@
 
 const showdown = require('showdown');
 const fs = require('fs-extra');
+const { program } = require('commander');
 
 const distDir = './dist';
 
 const cssFile = __dirname + '/style.css'; //inside our module
-const readmeFile = process.argv[2] || './README.md';
-const pageTitle = process.argv[3] || 'Read Me';
-const outputFile = distDir + '/index.html';
-const assetsDirSource = process.argv[4] || './assets/';
+
+program
+  .option(
+    '-i, --input <filename>',
+    'The input readme/markdown file',
+    'README.md'
+  )
+  .option('-o, --output <filename>', 'The output HTML file', 'index.html')
+  .option('-t, --title <title>', 'The page title', 'Read Me');
+
+program.parse(process.argv);
+const options = program.opts();
+
+const readmeFile = './' + options.input;
+const pageTitle = options.title;
+const outputFile = distDir + '/' + options.output;
+const assetsDirSource = './assets/';
 const assetsDirTarget = distDir + '/assets';
 
 const converter = new showdown.Converter({
