@@ -11,10 +11,13 @@ npm install github-readme-to-html
 ### Run
 
 ```
-npx github-readme-to-html [readme file] [output page title] [assets dir]
-  readme file defaults to ./README.md
-  output page title defaults to 'Read Me'
-  assets dir defaults to ./assets
+Usage: npx github-readme-to-html [options]
+
+Options:
+  -i, --input <filename>   The input readme/markdown file (default: "README.md")
+  -o, --output <filename>  The output HTML file (default: "index.html")
+  -t, --title <title>      The page title (default: "Read Me")
+  -h, --help               display help for command
 ```
 
 ### Output
