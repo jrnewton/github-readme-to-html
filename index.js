@@ -31,7 +31,8 @@ const converter = new showdown.Converter({
   simpleLineBreaks: true,
   ghMentions: true,
   tables: true,
-  emoji: true
+  emoji: true,
+  parseImgDimensions: true
 });
 
 converter.setFlavor('github');
