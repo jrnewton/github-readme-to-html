@@ -1,6 +1,6 @@
 {
   "name": "github-readme-to-html",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Generate a simple HTML page based on a single markdown file",
   "main": "index.js",
   "files": [
