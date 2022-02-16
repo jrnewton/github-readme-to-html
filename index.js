@@ -3,6 +3,7 @@
 const showdown = require('showdown');
 const fs = require('fs-extra');
 const { program } = require('commander');
+const footnotes = require('showdown-footnotes');
 
 const distDir = './dist';
 
@@ -32,7 +33,8 @@ const converter = new showdown.Converter({
   ghMentions: true,
   tables: true,
   emoji: true,
-  parseImgDimensions: true
+  parseImgDimensions: true,
+  extensions: [footnotes]
 });
 
 converter.setFlavor('github');

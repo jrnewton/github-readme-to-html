@@ -11,7 +11,8 @@
   "dependencies": {
     "commander": "^8.3.0",
     "fs-extra": "^9.1.0",
-    "showdown": "^1.9.1"
+    "showdown": "^1.9.1",
+    "showdown-footnotes": "^2.1.2"
   },
   "devDependencies": {
     "prettier": "^2.2.1"
