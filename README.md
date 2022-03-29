@@ -39,6 +39,14 @@ Input: [ORIGINAL.md](ORIGINAL.md)
 
 Output: https://github-readme-to-html.netlify.app/
 
+### Change Log
+
+- 1.0.8 - update dependency
+- 1.0.7 - jrnewton/github-readme-to-html#5 - fix newline issue when using yarn
+- 1.0.6 - jrnewton/github-readme-to-html#3 - footnote support
+- 1.0.5 - jrnewton/github-readme-to-html#4 - resize image support
+- 1.0.4 - jrnewton/github-readme-to-html#2 - output filename support
+
 ---
 
 This project is based on https://github.com/KrauseFx/markdown-to-html-github-style
