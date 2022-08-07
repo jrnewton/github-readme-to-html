@@ -54,23 +54,8 @@ npm install ~/code/github-readme-to-html/github-readme-to-html-x.x.x.tgz
 
 # copy ORIGINAL.md or create a test README.md
 cat <<EOF > README.md
-# Test
-Here's an example of syntax highlighting:
-```js
-function isSyntaxHighlightingSupported() {
-  return true;
-}
-```
-
 - Bullet list item 1
 - Bullet list item 2
-  - Bullet list item 2.1
-  - Bullet list item 2.2
-
----
-
-1. Numbered list item 1
-1. Numbered list item 2
 EOF
 
 # run the module
