@@ -61,13 +61,16 @@ This will read the `README.md` from your current working directory and output th
 
 ## Open tasks
 
-Check out the [open issues](https://github.com/KrauseFx/markdown-to-html-github-style/issues), in particular code blocks currently don't support syntax highlighting, however that's something that's rather easy to add. For a minimalistic stylesheet we could take the styles from [krausefx.com css](https://github.com/KrauseFx/krausefx.com/blob/021186e228e183904af68ad8fc500c35107f00ae/assets/main.scss#L345-L438).
+Check out the [open issues](https://github.com/KrauseFx/markdown-to-html-github-style/issues).
 
 ## Playground to test
 
-```
-{
-  testcode: 1
+Syntax highlighting is also supported. We use [highlight.js](https://highlightjs.org/). We automatically try to detect what language you are using but you can also specify the language if you'd like. You can use [this](https://highlightjs.readthedocs.io/en/latest/css-classes-reference.html#language-names-and-aliases) guide for language name aliases.
+
+Here's an example of syntax highlighting:
+```js
+function isSyntaxHighlightingSupported() {
+  return true;
 }
 ```
 

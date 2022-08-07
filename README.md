@@ -39,6 +39,44 @@ Input: [ORIGINAL.md](ORIGINAL.md)
 
 Output: https://github-readme-to-html.netlify.app/
 
+### Testing
+To test local changes:
+```
+# open a terminal and cd to this directory, let's call it ~/code/github-readme-to-html/
+cd ~/code/github-readme-to-html/
+
+# build the module
+npm pack
+
+# install the module into another directory
+cd /tmp
+npm install ~/code/github-readme-to-html/github-readme-to-html-x.x.x.tgz
+
+# copy ORIGINAL.md or create a test README.md
+cat <<EOF > README.md
+# Test
+Here's an example of syntax highlighting:
+```js
+function isSyntaxHighlightingSupported() {
+  return true;
+}
+```
+
+- Bullet list item 1
+- Bullet list item 2
+  - Bullet list item 2.1
+  - Bullet list item 2.2
+
+---
+
+1. Numbered list item 1
+1. Numbered list item 2
+EOF
+
+# run the module
+npx github-readme-to-html 
+```
+
 ### Change Log
 
 - 1.0.8 - update dependency
