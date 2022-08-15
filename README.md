@@ -42,24 +42,7 @@ Output: https://github-readme-to-html.netlify.app/
 ### Testing
 To test local changes:
 ```
-# open a terminal and cd to this directory, let's call it ~/code/github-readme-to-html/
-cd ~/code/github-readme-to-html/
-
-# build the module
-npm pack
-
-# install the module into another directory
-cd /tmp
-npm install ~/code/github-readme-to-html/github-readme-to-html-x.x.x.tgz
-
-# copy ORIGINAL.md or create a test README.md
-cat <<EOF > README.md
-- Bullet list item 1
-- Bullet list item 2
-EOF
-
-# run the module
-npx github-readme-to-html 
+node ./index.js 
 ```
 
 ### Change Log
