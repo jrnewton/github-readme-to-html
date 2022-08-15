@@ -74,6 +74,15 @@ function isSyntaxHighlightingSupported() {
 }
 ```
 
+Another test:
+```ts
+import { npxImport } from 'npx-import'
+
+//if big-dep isn't installed locally, npxImport will try
+//to download, install & load it, completely seamlessly.
+const dependency = await npxImport('big-dep')
+```
+
 - Bullet list item 1
 - Bullet list item 2
   - Bullet list item 2.1

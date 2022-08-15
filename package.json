@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "node index.js -i ORIGINAL.md -o index.html -t \"Read Me\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node index.js -i HLJS-TEST.md"
   },
   "repository": {
     "type": "git",
