@@ -47,6 +47,7 @@ node ./index.js
 
 ### Change Log
 
+- 1.0.9 - jrnewton/github-readme-to-html#9 - highlightjs support
 - 1.0.8 - update dependency
 - 1.0.7 - jrnewton/github-readme-to-html#5 - fix newline issue when using yarn
 - 1.0.6 - jrnewton/github-readme-to-html#3 - footnote support
