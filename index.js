@@ -50,9 +50,9 @@ const highlight = function() {
       const replacement = function (wholeMatch, match, left, right) {
         match = htmlunencode(match);
         const lang = (left.match(/class=\"([^ \"]+)/) || [])[1];
-        left = left.slice(0, 18) + 'hljs ' + left.slice(18);
         if (lang && hljs.getLanguage(lang)) {
-          return left + hljs.highlight(lang, match).value + right;
+          left = left.slice(0, 18) + 'hljs ' + left.slice(18);
+          return left + hljs.highlight(match, { language: lang }).value + right;
         } else {
           return left + hljs.highlightAuto(match).value + right;
         }
