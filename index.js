@@ -4,9 +4,7 @@ const showdown = require('showdown');
 const fs = require('fs-extra');
 const { program } = require('commander');
 const footnotes = require('showdown-footnotes');
-const showdownHighlight = require("showdown-highlight");
-
-const hljs = require ('highlight.js');
+const highlight = require("showdown-highlight");
 
 const distDir = './dist';
 
@@ -32,40 +30,6 @@ const outputFile = distDir + '/' + options.output;
 const assetsDirSource = './assets/';
 const assetsDirTarget = distDir + '/assets';
 
-const highlight = function() {
-  function htmlunencode(text) {
-    return (
-      text
-        .replace(/&amp;/g, '&')
-        .replace(/&lt;/g, '<')
-        .replace(/&gt;/g, '>')
-      );
-  }
-  
-  return [{
-    type: "output",
-    //From docs: it is not advisable to make ANY change to the converter object.
-    filter: function (text, _converter, _options) {
-      const left = "<pre><code\\b[^>]*>",
-          right = "</code></pre>",
-          flags = "g";
-      const replacement = function (wholeMatch, match, left, right) {
-        match = htmlunencode(match);
-        const lang = (left.match(/class=\"([^ \"]+)/) || [])[1];
-        if (lang && hljs.getLanguage(lang)) {
-          left = left.slice(0, 18) + 'hljs ' + left.slice(18);
-          return left + hljs.highlight(match, { language: lang }).value + right;
-        } else {
-          return left + hljs.highlightAuto(match).value + right;
-        }
-      };
-      return showdown.helper.replaceRecursiveRegExp(text, replacement, left, right, flags);
-    }
-  }];
-};
-
-showdown.extension('highlight', highlight);
-
 const converter = new showdown.Converter({
   ghCompatibleHeaderId: true,
   simpleLineBreaks: true,
@@ -73,7 +37,7 @@ const converter = new showdown.Converter({
   tables: true,
   emoji: true,
   parseImgDimensions: true,
-  extensions: [footnotes, showdownHighlight] //, 'highlight']
+  extensions: [footnotes, highlight]
 });
 
 converter.setFlavor('github');
