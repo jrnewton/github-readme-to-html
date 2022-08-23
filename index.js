@@ -4,6 +4,8 @@ const showdown = require('showdown');
 const fs = require('fs-extra');
 const { program } = require('commander');
 const footnotes = require('showdown-footnotes');
+const showdownHighlight = require("showdown-highlight");
+
 const hljs = require ('highlight.js');
 
 const distDir = './dist';
@@ -71,7 +73,7 @@ const converter = new showdown.Converter({
   tables: true,
   emoji: true,
   parseImgDimensions: true,
-  extensions: [footnotes, 'highlight']
+  extensions: [footnotes, showdownHighlight] //, 'highlight']
 });
 
 converter.setFlavor('github');
