@@ -1,6 +1,6 @@
 {
   "name": "github-readme-to-html",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Generate a simple HTML page based on a single markdown file",
   "main": "index.js",
   "files": [
@@ -11,15 +11,17 @@
   "dependencies": {
     "commander": "^8.3.0",
     "fs-extra": "^9.1.0",
+    "highlight.js": "^11.6.0",
     "showdown": "^1.9.1",
-    "showdown-footnotes": "^2.1.2"
+    "showdown-footnotes": "^2.1.2",
+    "showdown-highlight": "^3.0.0"
   },
   "devDependencies": {
     "prettier": "^2.2.1"
   },
   "scripts": {
     "start": "node index.js -i ORIGINAL.md -o index.html -t \"Read Me\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node index.js -i HLJS-TEST.md"
   },
   "repository": {
     "type": "git",
