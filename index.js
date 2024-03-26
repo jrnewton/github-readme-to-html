@@ -10,7 +10,7 @@ const distDir = './dist';
 
 const cssFile = __dirname + '/style.css'; //inside our module
 
-const hljsCssFile = './node_modules/highlight.js/styles/github.css';
+const hljsCssFile = require.resolve('highlight.js/styles/github.css')
 
 program
   .option(
