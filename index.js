@@ -38,7 +38,7 @@ const assetsDirTarget = distDir + '/assets';
 
 
 // style defaults to 'light'
-let cssFileName = 'style-light.css';
+let cssFileName = 'style.css';
 let hljsCssFileName = 'github.css';
 
 if (styleMode === "dark") {
