@@ -54,7 +54,7 @@ node ./index.js
 ```
 
 ### Change Log
-
+- 1.0.11 - jrnewton/github-readme-to-html#1 - Support for dark mode
 - 1.0.10 - jrnewton/github-readme-to-html#13 - Breaks on npx: assumes highlight.js is available locally
 - 1.0.9  - jrnewton/github-readme-to-html#9 - highlightjs support
 - 1.0.8  - update dependency

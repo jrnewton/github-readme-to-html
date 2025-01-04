@@ -1,11 +1,12 @@
 {
   "name": "github-readme-to-html",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Generate a simple HTML page based on a single markdown file",
   "main": "index.js",
   "files": [
     "index.js",
-    "style.css"
+    "style.css",
+    "style-dark.css"
   ],
   "bin": "./index.js",
   "dependencies": {
