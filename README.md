@@ -15,7 +15,9 @@ Usage: npx github-readme-to-html [options]
 
 Options:
   -i, --input <filename>   The input readme/markdown file (default: "README.md")
+  -d, --dir <dirname>      The output directory (default: "./dist")
   -o, --output <filename>  The output HTML file (default: "index.html")
+  -s, --style <mode>       The style mode to use, either 'light' or 'dark' (default: "light")
   -t, --title <title>      The page title (default: "Read Me")
   -h, --help               display help for command
 ```
@@ -33,11 +35,17 @@ All output goes to ./dist
     - .
 ```
 
-### Example
+### Example - Default Light Mode
 
 Input: [ORIGINAL.md](ORIGINAL.md)
 
 Output: https://github-readme-to-html.netlify.app/
+
+### Example - Dark Mode
+
+Input: [ORIGINAL.md](ORIGINAL.md)
+
+Output: https://github-readme-to-html-darkmode.netlify.app/
 
 ### Testing
 To test local changes:

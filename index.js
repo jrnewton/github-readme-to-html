@@ -6,29 +6,48 @@ const { program } = require('commander');
 const footnotes = require('showdown-footnotes');
 const highlight = require("showdown-highlight");
 
-const distDir = './dist';
-
-const cssFile = __dirname + '/style.css'; //inside our module
-
-const hljsCssFile = require.resolve('highlight.js/styles/github.css')
-
 program
   .option(
     '-i, --input <filename>',
     'The input readme/markdown file',
     'README.md'
   )
+  .option(
+    '-d, --dir <dirname>',
+    'The output directory',
+    "./dist"
+  )
   .option('-o, --output <filename>', 'The output HTML file', 'index.html')
+  .option(
+    '-s, --style <mode>',
+    'The style mode to use, either \'light\' or \'dark\'',
+    "light"
+  )
   .option('-t, --title <title>', 'The page title', 'Read Me');
 
 program.parse(process.argv);
 const options = program.opts();
 
 const readmeFile = './' + options.input;
+const styleMode = options.style;
 const pageTitle = options.title;
+const distDir = options.dir;
 const outputFile = distDir + '/' + options.output;
 const assetsDirSource = './assets/';
 const assetsDirTarget = distDir + '/assets';
+
+
+// style defaults to 'light'
+let cssFileName = 'style-light.css';
+let hljsCssFileName = 'github.css';
+
+if (styleMode === "dark") {
+  cssFileName = 'style-dark.css';
+  hljsCssFileName = 'github-dark-dimmed.css';
+}
+
+const cssFile = __dirname + '/' + cssFileName; //inside our module
+const hljsCssFile = require.resolve('highlight.js/styles/' + hljsCssFileName);
 
 const converter = new showdown.Converter({
   ghCompatibleHeaderId: true,

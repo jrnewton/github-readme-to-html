@@ -20,7 +20,8 @@
     "prettier": "^2.2.1"
   },
   "scripts": {
-    "start": "node index.js -i ORIGINAL.md -o index.html -t \"Read Me\"",
+    "light": "node index.js -i ORIGINAL.md -o index.html -t \"Read Me\"",
+    "dark": "node index.js -i ORIGINAL.md -o index.html -t \"Read Me\" -s \"dark\" -d \"dist-dark\"",
     "test": "node index.js -i HLJS-TEST.md"
   },
   "repository": {
